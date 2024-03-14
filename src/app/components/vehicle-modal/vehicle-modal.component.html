@@ -1,0 +1,92 @@
+<div id="modal-content-wrapper" class="col-md-12">
+  <header id="modal-header">
+    <h1 id="modal-title">{{ modalData.title }}</h1>
+  </header>
+  <section class="row" id="modal-body">
+    <p>{{ modalData.description }}</p>
+
+    <form [formGroup]="form" class="col-md-12">
+      <div class="form-group col-md-6" *ngIf="modalData.status === 'edit'">
+        <label for="id">Id</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Digite o id"
+          formControlName="id">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="placa">placa</label>
+        <input
+          type="text"
+          class="form-control"
+          id="placa"
+          placeholder="Digite a placa"
+          formControlName="placa">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="chassi">chassi</label>
+        <input
+          type="text"
+          class="form-control"
+          id="chassi"
+          placeholder="Digite a chassi"
+          formControlName="chassi">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="renavam">renavam</label>
+        <input
+          type="text"
+          class="form-control"
+          id="renavam"
+          placeholder="Digite a renavam"
+          formControlName="renavam">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="modelo">modelo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="modelo"
+          placeholder="Digite a modelo"
+          formControlName="modelo">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="marca">marca</label>
+        <input
+          type="text"
+          class="form-control"
+          id="marca"
+          placeholder="Digite a marca"
+          formControlName="marca">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="ano">ano</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ano"
+          placeholder="Digite a ano"
+          formControlName="ano">
+      </div>
+    </form>
+  </section>
+
+  <footer class="col-md-12">
+    <button id="modal-cancel-button" class="btn btn-danger" (click)="closeModal()">
+      Cancelar
+    </button>
+    <button
+      class="btn btn-success"
+      id="modal-action-button"
+      [disabled]="!form.valid"
+      (click)="actionFunction()">
+      {{ modalData.actionButtonText }}
+    </button>
+  </footer>
+</div>

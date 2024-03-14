@@ -1,0 +1,30 @@
+<form [formGroup]="form" (submit)="submit()">
+
+  <div class="form-group">
+    <label for="name">Nome</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Seu Nome"
+      formControlName="name">
+  </div>
+
+  <div class="form-group">
+    <label for="email">E-mail</label>
+    <input
+      type="email"
+      class="form-control"
+      placeholder="Seu email"
+      formControlName="email">
+  </div>
+  <div class="form-group">
+    <label for="password">Senha</label>
+    <input type="password" class="form-control" id="password" placeholder="Sua Senha" formControlName="password">
+  </div>
+
+   <div class="form-group">
+     <button class="btn btn-success" type="submit" [disabled]="!form.valid">Cadastrar</button>
+   </div>
+
+</form>

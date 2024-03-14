@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Exclusão de Veiculo.</h2>
+<mat-dialog-content>
+  Tem certeza que deseja excluir este veiculo?
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close (click)="closeModal()">Cancelar</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="actionFunction()">Excluir</button>
+</mat-dialog-actions>

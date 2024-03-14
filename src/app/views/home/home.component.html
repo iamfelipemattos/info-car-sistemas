@@ -1,0 +1,13 @@
+<div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Info car sistemas</a>
+
+    <div class="collapse navbar-collapse" id="navbarText">
+      <span class="navbar-text">
+        <button type="button" class="btn btn-success mr-3" (click)="openCreateVehicleModal()">Adicionar Veiculo</button>
+        <button type="button" class="btn btn-danger" (click)="logout()">Sair</button>
+      </span>
+    </div>
+  </nav>
+  <app-list *ngIf="vehicles" [vehicles]="vehicles" (status)="actionType($event)"></app-list>
+</div>

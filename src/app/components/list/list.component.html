@@ -1,0 +1,38 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">placa</th>
+      <th scope="col">chassi</th>
+      <th scope="col">renavam</th>
+      <th scope="col">modelo</th>
+      <th scope="col">ano</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="vehicles">
+      <tr *ngFor="let vehicle of vehicles;">
+        <th scope="row">{{ vehicle.id }}</th>
+        <td>{{ vehicle.placa }}</td>
+        <td>{{ vehicle.chassi }}</td>
+        <td>{{ vehicle.renavam }}</td>
+        <td>{{ vehicle.modelo }}</td>
+        <td>{{ vehicle.ano }}</td>
+        <td>
+          <button (click)="editVehicle(vehicle)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button (click)="removeVehicle(vehicle)">
+            <mat-icon>clear</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </ng-container>
+
+
+    <div *ngIf="vehicles?.length === 0" class="col-12 d-flex justify-content-center align-items-center">
+      <p>Não há nenhum veiculo cadastrado.</p>
+    </div>
+  </tbody>
+</table>

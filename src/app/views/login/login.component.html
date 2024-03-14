@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-center align-items-center">
+  <app-form-login *ngIf="!showSignup" (user)="login($event)"></app-form-login>
+  <app-form-signup *ngIf="showSignup" (user)="create($event)"></app-form-signup>
+  <button *ngIf="!showSignup" class="btn btn-primary" (click)="showSignupForm()">Cadastrar</button>
+  <button *ngIf="showSignup" class="btn btn-primary" (click)="showSignupForm()">Login</button>
+</div>
